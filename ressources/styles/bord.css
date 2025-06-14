@@ -1,0 +1,153 @@
+
+/* Variables */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --light: #ecf0f1;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+}
+
+/* Structure de base */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 25px;
+}
+
+/* Titres */
+.dashboard-container h2 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Liens d'action */
+.action-links {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-links a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.action-links a:first-child {
+    background-color: var(--success);
+    color: white;
+}
+
+.action-links a:last-child {
+    background-color: var(--danger);
+    color: white;
+}
+
+.action-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Tableau */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.matches-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.matches-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.matches-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.matches-table tr:hover {
+    background-color: #f1f7fd;
+}
+
+/* Cellules spéciales */
+.team-matchup {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.price-cell {
+    font-weight: bold;
+    color: var(--success);
+}
+
+/* Actions */
+.action-cell {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-cell a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.edit-link {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.delete-link {
+    background-color: var(--danger);
+    color: white;
+}
+
+.action-cell a:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .action-cell {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .action-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.matches-table tr {
+    animation: fadeIn 0.3s ease forwards;
+    animation-delay: calc(var(--order) * 0.05s);
+}

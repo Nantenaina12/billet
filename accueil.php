@@ -12,7 +12,7 @@ $matchs = $db->query("SELECT * FROM matchs ORDER BY date_heure ASC")->fetchAll(P
 <head>
     <meta charset="UTF-8">
     <title>Billetterie CAN Maroc</title>
-    <link rel="stylesheet" href="ressources/styles/style.css">
+    <link rel="stylesheet" href="ressources/styles/accueil.css">
 </head>
 <body class="acceuil">
     <nav>

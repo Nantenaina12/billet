@@ -26,15 +26,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 ?>
-
-<h2>Modifier un match</h2>
-<form method="post">
-    <input name="equipe1"value="<?= $match['equipe1'] ?>" required><br>
-    <input name="equipe2" value="<?= $match['equipe2'] ?>" required><br>
-    <input type="datetime-local" name="date_heure" value="<?= str_replace(' ', 'T', $match['date_heure']) ?>" required><br>
-    <input name="lieu" value="<?= $match['lieu'] ?>" required><br>
-    <input type="number" name="places_disponibles" value="<?= $match['places_disponibles'] ?>" required><br>
-    <input type="text" name="description" value="<?= $match['description'] ?>" required><br>
-    <input type="number" name="prix" step="0.01" value="<?= $match['prix'] ?>" required><br>
-    <button type="submit">Enregistrer</button>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Match</title>
+    <link rel="stylesheet" href="../ressources/styles/modifier_match.css">
+</head>
+<body>
+    <div class="edit-match-container">
+        <h2 class="edit-match-title">Modifier un match</h2>
+        <form method="post" class="edit-match-form">
+            <div class="edit-match-field-group">
+                <label>Équipe 1</label>
+                <input type="text" class="edit-match-input" name="equipe1" value="<?= htmlspecialchars($match['equipe1']) ?>" required>
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Équipe 2</label>
+                <input type="text" class="edit-match-input" name="equipe2" value="<?= htmlspecialchars($match['equipe2']) ?>" required>
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Date et Heure</label>
+                <input type="datetime-local" class="edit-match-input" name="date_heure" value="<?= str_replace(' ', 'T', $match['date_heure']) ?>" required>
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Lieu</label>
+                <input type="text" class="edit-match-input" name="lieu" value="<?= htmlspecialchars($match['lieu']) ?>" required>
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Places disponibles</label>
+                <input type="number" class="edit-match-input" name="places_disponibles" value="<?= (int)$match['places_disponibles'] ?>" required>
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Description</label>
+                <input type="text" class="edit-match-input" name="description" value="<?= htmlspecialchars($match['description']) ?>">
+            </div>
+            
+            <div class="edit-match-field-group">
+                <label>Prix (USD)</label>
+                <input type="number" class="edit-match-input" name="prix" step="0.01" value="<?= number_format($match['prix'], 2) ?>" required>
+            </div>
+            
+            <button type="submit" class="edit-match-submit">Enregistrer les modifications</button>
+        </form>
+    </div>
+</body>
+</html>
