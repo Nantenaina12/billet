@@ -24,18 +24,30 @@ $matchs = $db->query("SELECT * FROM matchs ORDER BY date_heure ASC")->fetchAll(P
 
     </nav>
     <div id="message"></div>
-
-
     <?php foreach ($matchs as $match): ?>
+
         <div class="match">
-            <h2><?= htmlspecialchars($match['equipe1']) ?> vs <?= htmlspecialchars($match['equipe2']) ?></h2>
+
+            <div class="teams">
+                <div class="drapeau1">
+                    <img src="<?= htmlspecialchars($match['team1_flag']) ?>"width="100" height="60">
+                    <p><?= htmlspecialchars($match['equipe1']) ?></p>
+                </div>
+                <p class="para">vs</p>
+                <div class="drapeau2">
+                    <img src="<?= htmlspecialchars($match['team2_flag']) ?>"width="100" height="60">
+                    <p><?= htmlspecialchars($match['equipe2']) ?></p>
+                </div>
+            
+            </div>
             <p><strong>Date & heure :</strong> <?= date('d/m/Y H:i', strtotime($match['date_heure'])) ?></p>
             <p><strong>Lieu :</strong> <?= htmlspecialchars($match['lieu']) ?></p>
-            <p><strong>Prix :</strong> <?= $match['prix'] ?> USD</p>
-            <a href="pages/details_matchs.php?id=<?= $match['id'] ?>">Détails</a>
+            <p><strong>Prix :</strong> <?= number_format($match['prix'], 2) ?> USD</p>
+            <a href="pages/details_matchs.php?id=<?= (int)$match['id'] ?>" class="plus">Détails</a>
         </div>
-        <hr>
     <?php endforeach; ?>
+
     <script src="ressources/scripts/script.js"></script>
+    <footer>© Orlando 2025 - Tous droits réservés</footer>
 </body>
 </html>
