@@ -125,7 +125,6 @@ a.ac {
 
 a.ac:hover {
     background: rgba(255,255,255,0.2);
-    text-decoration: underline;
 }
 
 /* Message d'erreur */
