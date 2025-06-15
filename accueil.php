@@ -23,6 +23,7 @@ $matchs = $db->query("SELECT * FROM matchs ORDER BY date_heure ASC")->fetchAll(P
         <a href="administration/login.php"><img src="ressources/images/admin.png" class="admin"></a>
 
     </nav>
+    <div id="resultat"></div>
     <div id="message"></div>
     <?php foreach ($matchs as $match): ?>
 

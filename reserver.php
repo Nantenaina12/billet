@@ -76,15 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Réserver un billet</title>
-    <link rel="stylesheet" href="../ressources/styles/style.css">
+    <link rel="stylesheet" href="ressources/styles/reserver.css">
 </head>
 <body>
     <h1>Réservation pour <?= htmlspecialchars($match['equipe1']) ?> vs <?= htmlspecialchars($match['equipe2']) ?></h1>
 
     <?php if ($confirmation): ?>
-        <div style="color: green;"><?= $confirmation ?></div>
+        <div class="alert-success"><?= $confirmation ?></div>
     <?php elseif ($erreur): ?>
-        <div style="color: red;"><?= $erreur ?></div>
+        <div class="alert alert-error"><?= $erreur ?></div>
     <?php endif; ?>
 
     <?php if (!$confirmation): ?>
@@ -117,6 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     <?php endif; ?>
 
-    <br><a href="pages/details_matchs.php?id=<?= $match['id'] ?>">← Retour aux détails</a>
+    <br><a href="pages/details_matchs.php?id=<?= $match['id'] ?>" class="retour">← Retour aux détails</a>
 </body>
 </html>

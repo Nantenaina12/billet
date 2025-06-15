@@ -24,7 +24,7 @@ if (!$match) {
 <head>
     <meta charset="UTF-8">
     <title>Détails du Match</title>
-    <link rel="stylesheet" href="../ressources/styles/style.css">
+    <link rel="stylesheet" href="../ressources/styles/details_match.css">
 </head>
 <body>
     <h1>Détails du Match</h1>
