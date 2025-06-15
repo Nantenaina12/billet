@@ -1,0 +1,137 @@
+/* styles.css - Page de paiement PayPal */
+
+/* Reset et styles de base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Titre */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Conteneur du bouton PayPal */
+#paypal-button-container {
+    margin: 30px 0;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style du bouton PayPal (sera remplacé par le SDK) */
+.paypal-button {
+    background-color: #0070ba;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.paypal-button:hover {
+    background-color: #005ea6;
+}
+
+/* Informations de résumé */
+.resume-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.resume-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.resume-info strong {
+    color: #2c3e50;
+    display: inline-block;
+    min-width: 180px;
+}
+
+/* Prix total */
+.total-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .resume-info strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Logo PayPal */
+.paypal-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Message de sécurité */
+.security-message {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.security-message svg {
+    margin-right: 8px;
+    fill: #27ae60;
+}

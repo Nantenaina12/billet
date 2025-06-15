@@ -32,6 +32,7 @@ $_SESSION['donnees_resa'] = compact('nom','prenom','email','telephone','nb','id'
 <head>
     <meta charset="UTF-8">
     <title>Paiement PayPal</title>
+    <link rel="stylesheet" href="ressources/styles/pay.css">
     <script src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&currency=USD"></script>
 </head>
 <body>

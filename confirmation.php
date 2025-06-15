@@ -14,6 +14,7 @@ $chemin_pdf = 'tickets/' . $fichier;
 <head>
     <meta charset="UTF-8" />
     <title>Confirmation de réservation</title>
+    <link rel="stylesheet" href="ressources/styles/confirmer.css"
 </head>
 <body>
     <h2>🎉 Réservation confirmée !</h2>
@@ -23,6 +24,6 @@ $chemin_pdf = 'tickets/' . $fichier;
     </ul>
 
     <p>💌 Le billet a été envoyé à votre adresse email : <strong><?= htmlspecialchars($donnees['email']) ?></strong></p>
-    <a href="accueil.php">Reserver autre match</a>
+    <a href="accueil.php">Réserver autre match</a>
 </body>
 </html>
